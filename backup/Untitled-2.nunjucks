@@ -1,0 +1,45 @@
+
+
+{% set postsCount = collections.posts | length %}
+{% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
+<h1>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h1>
+
+{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
+{% set postslistCounter = postsCount %}
+{% include "postslist.njk" %}
+
+{% set morePosts = postsCount - numberOfLatestPostsToShow %}
+{% if morePosts > 0 %}
+<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="/blog/">the archive</a>.</p>
+{% endif %}
+
+
+
+            <div class="tiny-slide px-md-5">
+                <div class="card client-testi text-center">
+                    <img src="images/client/03.jpg" class="avatar avatar-small rounded-pill mx-auto" alt="">
+
+                    <div class="card-body pb-0 content">
+                        <p class="h5 fw-normal text-muted fst-italic">" Thus, Lorem Ipsum has only limited suitability as a visual filler for German texts. If the fill text is intended to illustrate the characteristics of different typefaces. "</p>
+
+                        <div class="name mt-4">
+                            <small class="text-uppercase fw-semibold d-block">Shelly Goodman</small>
+                            <small class="text-muted">Manager</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+
+        <script src="js/tiny-slider.js"></script>
+
+
+
+        <ol reversed class="postlist" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
+{% for post in postslist | reverse %}
+	<li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
+		<a href="{{ post.url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
+		<time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("LLLL yyyy") }}</time>
+	</li>
+{% endfor %}
+</ol>

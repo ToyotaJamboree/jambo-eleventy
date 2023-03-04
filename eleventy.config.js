@@ -2,18 +2,23 @@ const { DateTime } = require("luxon");
 const markdownItAnchor = require("markdown-it-anchor");
 
 const pluginRss = require("@11ty/eleventy-plugin-rss");
-const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+
 const pluginBundle = require("@11ty/eleventy-plugin-bundle");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
+
+
+
+
 module.exports = function(eleventyConfig) {
 	// Copy the contents of the `public` folder to the output folder
 	// For example, `./public/css/` ends up in `_site/css/`
-	eleventyConfig.addPassthroughCopy({
-		"./public/": "/",
-		"./node_modules/prismjs/themes/prism-okaidia.css": "/css/prism-okaidia.css"
-	});
+	eleventyConfig.addPassthroughCopy({"src/assets/css/**/*.css": "/assets/css"});
+	eleventyConfig.addPassthroughCopy({"src/assets/fonts": "/assets/fonts"});
+	eleventyConfig.addPassthroughCopy({"src/assets/img": "/assets/img"});
+	eleventyConfig.addPassthroughCopy({"src/assets/js": "/assets/js"});
+
 
 	// Run Eleventy when these files change:
 	// https://www.11ty.dev/docs/watch-serve/#add-your-own-watch-targets
@@ -25,14 +30,32 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(require("./eleventy.config.drafts.js"));
 	eleventyConfig.addPlugin(require("./eleventy.config.images.js"));
 
+
+	const eleventySass = require("eleventy-sass");
+	eleventyConfig.addPlugin(eleventySass,{
+		sass: {
+			style: "expanded",
+			sourceMap: true,
+			loadPaths: ["node_modules"],
+		  },
+
+	});
+
+
 	// Official plugins
 	eleventyConfig.addPlugin(pluginRss);
-	eleventyConfig.addPlugin(pluginSyntaxHighlight, {
-		preAttributes: { tabindex: 0 }
-	});
+	
+
 	eleventyConfig.addPlugin(pluginNavigation);
 	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 	eleventyConfig.addPlugin(pluginBundle);
+
+
+
+
+
+
+
 
 	// Filters
 	eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
@@ -115,10 +138,10 @@ module.exports = function(eleventyConfig) {
 
 		// These are all optional:
 		dir: {
-			input: "content",         // default: "."
-			includes: "../_includes",  // default: "_includes"
-			data: "../_data",          // default: "_data"
-			output: "_site"
+			input: "src",         // default: "."
+			includes: "_includes",  // default: "_includes"
+			data: "_data",          // default: "_data"
+			output: "_dist"
 		},
 
 		// -----------------------------------------------------------------
