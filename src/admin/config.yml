@@ -34,7 +34,8 @@ collections:
         }
       - { label: "tags", name: "tags", widget: "list" }
       - { label: "body", name: "body", widget: "markdown" }
-  - name: "Pages"
+  - name: "pages"
+    label: "Pages"
     files:
       - name: "faq"
         label: "FAQs"
