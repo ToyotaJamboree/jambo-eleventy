@@ -19,7 +19,8 @@ collections:
         - { label: "permalink", name: "permalink", widget: "string" }
         - { label: "tags", name: "tags", widget: "list" }
         - { label: "body", name: "body", widget: "markdown" }
-  - name: "FAQs"
+files:
+  - name: "faq"
     label: "Fequently Asked Questions"
     file: "src/_data/faq.json"
     fields:
