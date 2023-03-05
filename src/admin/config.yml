@@ -19,3 +19,13 @@ collections:
       - { label: "permalink", name: "permalink", widget: "string" }
       - { label: "tags", name: "tags", widget: "list" }
       - { label: "body", name: "body", widget: "markdown" }
+  - name: "Products"
+      label: "Products Section"
+      file: "src/_data/faq.json"
+      fields:
+      - label: "Categories"
+        name: "questionList"
+        widget: "list"
+        fields:
+          - {label: "Question", name: "text", widget: "string"}
+          - {label: "Answer", name: "answer", widget: "markdown"}
