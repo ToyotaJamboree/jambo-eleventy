@@ -9,16 +9,15 @@ const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
 
 
-
-
 module.exports = function(eleventyConfig) {
 	// Copy the contents of the `public` folder to the output folder
 	// For example, `./public/css/` ends up in `_site/css/`
+	
 	eleventyConfig.addPassthroughCopy({"src/assets/css/**/*.css": "/assets/css"});
 	eleventyConfig.addPassthroughCopy({"src/assets/fonts": "/assets/fonts"});
 	eleventyConfig.addPassthroughCopy({"src/assets/img": "/assets/img"});
 	eleventyConfig.addPassthroughCopy({"src/assets/js": "/assets/js"});
-
+	eleventyConfig.addPassthroughCopy('src/admin');
 
 	// Run Eleventy when these files change:
 	// https://www.11ty.dev/docs/watch-serve/#add-your-own-watch-targets
@@ -49,11 +48,6 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginNavigation);
 	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 	eleventyConfig.addPlugin(pluginBundle);
-
-
-
-
-
 
 
 

@@ -5,7 +5,8 @@
 	"scripts": {
 		"build": "npx @11ty/eleventy",
 		"build-ghpages": "npx @11ty/eleventy --pathprefix=/eleventy-base-blog/",
-		"start": "npx @11ty/eleventy --serve --quiet",
+		"build:tailwind": "npx tailwindcss -i src/_includes/styles/global.css -c tailwind.config.js -o src/assets/css/global.css --watch",
+		"start": "npx @11ty/eleventy --serve --quiet & npm run build:tailwind",
 		"debug": "DEBUG=Eleventy* npx @11ty/eleventy",
 		"debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
 		"benchmark": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
@@ -41,7 +42,11 @@
 		"markdown-it-anchor": "^8.6.6"
 	},
 	"dependencies": {
+		"@tailwindcss/forms": "^0.5.3",
+		"@tailwindcss/typography": "^0.5.9",
 		"bootstrap": "^5.2.3",
-		"eleventy-sass": "^2.2.1"
+		"eleventy-sass": "^2.2.1",
+		"netlify-cms-app": "^2.15.72",
+		"tailwindcss": "^3.2.7"
 	}
 }
