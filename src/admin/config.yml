@@ -21,12 +21,20 @@ collections:
         - { label: "body", name: "body", widget: "markdown" }
 files:
   - name: "faq"
-    label: "Fequently Asked Questions"
+    label: "FAQs"
     file: "src/_data/faq.json"
     fields:
       - label: "Categories"
-        name: "questionList"
+        name: "categoryList"
         widget: "list"
         fields:
-          - {label: "Question", name: "question", widget: "string"}
+          - {label: "Category", name: "catagory", widget: "string"}
+          - label: "Questions"
+            name: "questionList"
+            widget: "list"
+            fields:
+              - {label: "Question", name: "question", widget: "string"}
+              - {label: "Answer", name: "answer", widget: "string"}
+
+
           - {label: "Answer", name: "answer", widget: "markdown"}
