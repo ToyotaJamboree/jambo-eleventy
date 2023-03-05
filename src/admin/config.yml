@@ -34,19 +34,19 @@ collections:
         }
       - { label: "tags", name: "tags", widget: "list" }
       - { label: "body", name: "body", widget: "markdown" }
-files:
-  - name: "faq"
-    label: "FAQs"
-    file: "src/_data/faq.json"
-    fields:
-      - label: "Categories"
-        name: "categoryList"
-        widget: "list"
-        fields:
-          - { label: "Category", name: "catagory", widget: "string" }
-          - label: "Questions"
-            name: "questionList"
-            widget: "list"
-            fields:
-              - { label: "Question", name: "question", widget: "string" }
-              - { label: "Answer", name: "answer", widget: "markdown" }
+  files:
+    - name: "faq"
+      label: "FAQs"
+      file: "src/_data/faq.json"
+      fields:
+        - label: "Categories"
+          name: "categoryList"
+          widget: "list"
+          fields:
+            - { label: "Category", name: "catagory", widget: "string" }
+            - label: "Questions"
+              name: "questionList"
+              widget: "list"
+              fields:
+                - { label: "Question", name: "question", widget: "string" }
+                - { label: "Answer", name: "answer", widget: "markdown" }

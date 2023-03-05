@@ -1,31 +1,4 @@
 [
-   {
-    "category" : "General",
-    "questions" : [
-        {
-            "q" : "Question One",
-            "a" : "Answer to question one"
-        },
-
-        {
-            "q" : "Question Two",
-            "a" : "Answer to question Two"
-        }
-    ]
-   },
-   {
-    "category" : "Registration",
-    "questions" : [
-        {
-            "q" : "Question One",
-            "a" : "Answer to question one"
-        },
-
-        {
-            "q" : "Question Two",
-            "a" : "Answer to question Two"
-        }
-    ]
-   }
+ 
    
 ]
