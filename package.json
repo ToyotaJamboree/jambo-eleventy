@@ -3,10 +3,12 @@
 	"version": "1.0.0",
 	"description": "A starter repository for a blog web site using the Eleventy site generator.",
 	"scripts": {
-		"build": "npx @11ty/eleventy",
-		"build-ghpages": "npx @11ty/eleventy --pathprefix=/eleventy-base-blog/",
-		"build:tailwind": "npx tailwindcss -i src/_includes/styles/global.css -c tailwind.config.js -o src/assets/css/global.css --watch",
-		"start": "npx @11ty/eleventy --serve --quiet & npm run build:tailwind",
+		"start": "concurrently -p \"[{name}]\" -n \"Site,CSS\" -c \"auto\" \"npm run dev:11ty\" \"npm run dev:css \"",
+		"build": "npm run build:css & npm run build:11ty",
+		"dev:11ty": "npx @11ty/eleventy --serve --quiet",
+		"dev:css": "npx tailwindcss -i src/_includes/styles/global.css -c tailwind.config.js -o src/assets/css/global.css --watch",
+		"build:11ty": "npx @11ty/eleventy",
+		"build:css": "npx tailwindcss -i src/_includes/styles/global.css -c tailwind.config.js -o src/assets/css/global.css",
 		"debug": "DEBUG=Eleventy* npx @11ty/eleventy",
 		"debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
 		"benchmark": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
@@ -45,6 +47,7 @@
 		"@tailwindcss/forms": "^0.5.3",
 		"@tailwindcss/typography": "^0.5.9",
 		"bootstrap": "^5.2.3",
+		"concurrently": "^7.6.0",
 		"eleventy-sass": "^2.2.1",
 		"netlify-cms-app": "^2.15.72",
 		"tailwindcss": "^3.2.7"

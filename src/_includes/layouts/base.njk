@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 <html lang="{{ metadata.language }}" class="dark">
 	<head>
@@ -22,13 +20,16 @@
 		#}
 
 		{#- Add an arbitrary string to the bundle #}
-		{%- css %}* { box-sizing: border-box; }{% endcss %}
+		{%- css %}* { box-sizing: border-box; }{% endcss %} 
 
 		{#- Add the contents of a file to the bundle #}
 		{# {%- css %}{% include "public/css/index.css" %}{% endcss %} #}
 
 		{# <link href="/assets/css/style.css" rel="stylesheet"> #}
 		<link href="/assets/css/global.css" rel="stylesheet">
+
+
+		<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 
 		{#- Or add from node_modules #}
@@ -38,32 +39,18 @@
 		<style>{% getBundle "css" %}</style>
 
 	</head>
-	<body class="antialiased bg-cyan-900 text-slate-50 tracking-tight ">
-		<a href="#skip" class="visually-hidden">Skip to main content</a>
+	<body class="{% if bodyClass %} {{bodyClass}} {% endif %}">
 
-        <!-- Navbar STart -->
-        {% include 'partials/header.njk' %}
-        <!-- Navbar End -->
-
-
-
-		<main id="skip">
+		{% if container %}
+		<div class="{{containerSize}}:container">
+		{% endif %} 
 			{{ content | safe }}
-		</main>
-
-
-
-		<!-- Current page: {{ page.url | htmlBaseUrl }} -->
-
-
+		{% if container %} 
+		</div>
+		{% endif %} 
 
    		<script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
-		{# <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script> #}
-   		
-		
-		{% include 'partials/footer.njk' %}
-
-		<script src="assets/js/app.js"></script>
+		<script src="/assets/js/app.js"></script>
 
 	</body>
 </html>

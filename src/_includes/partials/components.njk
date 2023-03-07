@@ -12,5 +12,29 @@
 {% endmacro %}
 
 
+{% macro section(title="default title", subtitle="default subtitle", link="default link") %}
+    title is {{title}} <br />
+    subtitle is {{subtitle}} <br />
+    link is {{link}} <br />
+
+{% endmacro %}
 
 
+
+{% macro accordionItem(question="default",answer="fea") %}
+
+    <div class="flex-1 mt-8 lg:mx-12 lg:mt-0" x-data="{open:false}">
+        <button class="flex items-center focus:outdivne-none py-2 w-full" @click="open=!open">
+            <iconify-icon icon="mdi:expand-less" class="transition-all duration-500	" :class="open ? '' : 'rotate-180'" height="32"></iconify-icon>
+            <h1 class="mx-4 text-xl text-gray-700 dark:text-white">{{question}}</h1>
+        </button>
+
+
+        <div class="relative overflow-hidden max-h-0 transition-all duration-300 border-b border-neutral-300"	  x-bind:style="open ? 'max-height: ' + $el.scrollHeight + 'px':''">
+            <p class="text-md max-w-3xl pl-12 pb-8 py-4 text-gray-500 dark:text-gray-300">
+               {{answer}}
+            </p>
+        </div>
+    </div>
+
+{% endmacro %}

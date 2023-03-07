@@ -1,23 +1,81 @@
 ---
-layout: layouts/base.njk
+layout: layouts/default.njk
+
 ---
 
-<div class="cover" style="background: url('assets/img/about.jpg') center;">
+{# <div class="cover" style="background: url('assets/img/about.jpg') center;">
   <div><!-- header -->
   
-		Hero Header
+		Hero Header asd
   
   </div>
   <h1>Toyota Jamboree </h1>
   <div>Learn More</div>
 </div>
+  #}
+
+{# 
+    comment
+#}
+{% set test = hello %}
 
 
 
-<section class="bg-white dark:bg-gray-900">
+
+
+{% for item in sequence %}
+	
+{% endfor %}
+
+
+
+{% import "partials/components.njk" as c  %}
+
+{{c.section(
+	link="hell",
+	subtitle="a new subtitle"
+)}}
+
+
+{# {{c.accordion(
+    title="hello",
+    data=faq
+
+)}} #}
+
+{# 
+{% block accordion %}
+
+
+
+{% endblock %}
+
+{% block accordion-item %}
+
+
+
+{% endblock %} #}
+
+
+
+<div>
+    {# For Catagories #}
+    {% for item in faq %}
+       <h3 class="text-2xl md:text-3xl font-semibold leading-tighter tracking-tighter"> {{item.catagory}} </h3>
+        <ul>
+            {% for qItem in item.questionList %}
+                {{c.accordionItem(qItem.question,qItem.answer|safe)}}
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</div>
+
+
+
+<section class="bg-white dark:bg-neutral-900">
     <div class="container px-6 py-10 mx-auto">
         <div class="text-center">
-            <h1 class="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">From the blog</h1>
+            <h1 class="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white bg-red-500">From the blog</h1>
 
             <p class="max-w-lg mx-auto mt-4 text-gray-500">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veritatis sint autem nesciunt, laudantium
@@ -29,7 +87,7 @@ layout: layouts/base.njk
             <div>
                 <img class="relative z-10 object-cover w-full rounded-md h-96" src="https://images.unsplash.com/photo-1644018335954-ab54c83e007f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="">
 
-                <div class="relative z-20 max-w-lg p-6 mx-auto -mt-20 bg-white rounded-md shadow dark:bg-gray-900">
+                <div class="relative z-20 max-w-lg p-6 mx-auto -mt-20 bg-white rounded-md shadow dark:bg-neutral-800">
                     <a href="#" class="font-semibold text-gray-800 hover:underline dark:text-white md:text-xl">
                         All the features you want to know
                     </a>
@@ -46,7 +104,7 @@ layout: layouts/base.njk
             <div>
                 <img class="relative z-10 object-cover w-full rounded-md h-96" src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="">
 
-                <div class="relative z-20 max-w-lg p-6 mx-auto -mt-20 bg-white rounded-md shadow dark:bg-gray-900">
+                <div class="relative z-20 max-w-lg p-6 mx-auto -mt-20 bg-white rounded-md shadow dark:bg-neutral-800">
                     <a href="#" class="font-semibold text-gray-800 hover:underline dark:text-white md:text-xl">
                         How to use sticky note for problem solving
                     </a>
@@ -62,7 +120,7 @@ layout: layouts/base.njk
         </div>
     </div>
 </section>
-<section class="bg-white dark:bg-gray-900">
+<section class="bg-white dark:bg-neutral-800">
     <div class="container px-6 py-10 mx-auto">
         <h1 class="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">From the blog</h1>
 
@@ -75,7 +133,7 @@ layout: layouts/base.njk
                         How to use sticky note for problem solving
                     </a>
                     
-                    <span class="text-sm text-gray-500 dark:text-gray-300">On: 20 October 2019</span>
+                    <span class="text-sm text-gray-500 dark:text-gray-100">On: 20 October 2019</span>
                 </div>
             </div>
 
@@ -145,7 +203,7 @@ layout: layouts/base.njk
 
 
 
-<section class="bg-white dark:bg-cyan-800">
+<section class="bg-white dark:bg-zinc-900">
     <div class="container px-4 py-16 mx-auto lg:flex lg:items-center lg:justify-between">
         <h2 class="text-2xl font-semibold tracking-tight text-gray-800 xl:text-3xl dark:text-white">
             Sign up for Jambo News, Updates and Promotions

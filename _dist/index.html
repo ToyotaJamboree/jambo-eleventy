@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 <html lang="en" class="dark">
 	<head>
@@ -13,15 +11,20 @@
 
 		
 		<link href="/assets/css/global.css" rel="stylesheet">
+
+
+		<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 		
 		<style>* { box-sizing: border-box; }</style>
 
 	</head>
-	<body class="antialiased bg-cyan-900 text-slate-50 tracking-tight ">
-		<a href="#skip" class="visually-hidden">Skip to main content</a>
+	<body class=" antialiased bg-cyan-900 dark:bg-Cyan-900 text-slate-50 tracking-tight ">
 
-        <!-- Navbar STart -->
-        
+		 
+			
+<a href="#skip" class="sr-only">Skip to main content </a>
+
+
 
     
 
@@ -29,12 +32,17 @@
 
 
 
-<nav class="bg-white border-gray-200 px-2 md:px-4 py-2.5 dark:bg-gray-900">
+<nav class="bg-white border-gray-200 px-2 md:px-4 py-2.5 dark:bg-neutral-900 bg-gray-900">
     <div class="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto">
+
+
+        
+
         <a href="https://flowbite.com" class="flex items-center">
-            <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
-            <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
-        </a>
+    <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
+    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Toyota Jamboree</span>
+</a> 
+
         <div class="flex items-center md:order-2">
             <a href="#" class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 mr-1 md:mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Login</a>
             <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 mr-1 md:mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Sign up</a>
@@ -133,28 +141,132 @@
     </div>
 </nav>
 
-        <!-- Navbar End -->
+
+
+<main id="skip">
+    
 
 
 
-		<main id="skip">
-			
-<div class="cover" style="background: url('assets/img/about.jpg') center;">
-  <div><!-- header -->
-  
-		Hero Header
-  
-  </div>
-  <h1>Toyota Jamboree </h1>
-  <div>Learn More</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    title is default title <br />
+    subtitle is a new subtitle <br />
+    link is hell <br />
+
+
+
+
+
+
+
+
+
+
+<div>
+    
+    
+       <h3 class="text-2xl md:text-3xl font-semibold leading-tighter tracking-tighter"> Registration </h3>
+        <ul>
+            
+                
+
+    <div class="flex-1 mt-8 lg:mx-12 lg:mt-0" x-data="{open:false}">
+        <button class="flex items-center focus:outdivne-none py-2 w-full" @click="open=!open">
+            <iconify-icon icon="mdi:expand-less" class="transition-all duration-500	" :class="open ? '' : 'rotate-180'" height="32"></iconify-icon>
+            <h1 class="mx-4 text-xl text-gray-700 dark:text-white">Is Pre-Registration required? Can I just show up on event</h1>
+        </button>
+
+
+        <div class="relative overflow-hidden max-h-0 transition-all duration-300 border-b border-neutral-300"	  x-bind:style="open ? 'max-height: ' + $el.scrollHeight + 'px':''">
+            <p class="text-md max-w-3xl pl-12 pb-8 py-4 text-gray-500 dark:text-gray-300">
+               All registrations go through our ticketing system <a href='https://toyotajamboree.regfox.com/2023'>Register here</a> You can just show up, but availability of certain packages may be sold out and you would fill out electronically the same form, So to save time (and sometimes money) we recommend people pre-register ahead of time. Even if its the day before. 
+            </p>
+        </div>
+    </div>
+
+
+            
+                
+
+    <div class="flex-1 mt-8 lg:mx-12 lg:mt-0" x-data="{open:false}">
+        <button class="flex items-center focus:outdivne-none py-2 w-full" @click="open=!open">
+            <iconify-icon icon="mdi:expand-less" class="transition-all duration-500	" :class="open ? '' : 'rotate-180'" height="32"></iconify-icon>
+            <h1 class="mx-4 text-xl text-gray-700 dark:text-white">question two</h1>
+        </button>
+
+
+        <div class="relative overflow-hidden max-h-0 transition-all duration-300 border-b border-neutral-300"	  x-bind:style="open ? 'max-height: ' + $el.scrollHeight + 'px':''">
+            <p class="text-md max-w-3xl pl-12 pb-8 py-4 text-gray-500 dark:text-gray-300">
+               answer for two
+            </p>
+        </div>
+    </div>
+
+
+            
+        </ul>
+    
+       <h3 class="text-2xl md:text-3xl font-semibold leading-tighter tracking-tighter"> test3 </h3>
+        <ul>
+            
+                
+
+    <div class="flex-1 mt-8 lg:mx-12 lg:mt-0" x-data="{open:false}">
+        <button class="flex items-center focus:outdivne-none py-2 w-full" @click="open=!open">
+            <iconify-icon icon="mdi:expand-less" class="transition-all duration-500	" :class="open ? '' : 'rotate-180'" height="32"></iconify-icon>
+            <h1 class="mx-4 text-xl text-gray-700 dark:text-white">question one</h1>
+        </button>
+
+
+        <div class="relative overflow-hidden max-h-0 transition-all duration-300 border-b border-neutral-300"	  x-bind:style="open ? 'max-height: ' + $el.scrollHeight + 'px':''">
+            <p class="text-md max-w-3xl pl-12 pb-8 py-4 text-gray-500 dark:text-gray-300">
+               an answer for question 1
+            </p>
+        </div>
+    </div>
+
+
+            
+                
+
+    <div class="flex-1 mt-8 lg:mx-12 lg:mt-0" x-data="{open:false}">
+        <button class="flex items-center focus:outdivne-none py-2 w-full" @click="open=!open">
+            <iconify-icon icon="mdi:expand-less" class="transition-all duration-500	" :class="open ? '' : 'rotate-180'" height="32"></iconify-icon>
+            <h1 class="mx-4 text-xl text-gray-700 dark:text-white">question two</h1>
+        </button>
+
+
+        <div class="relative overflow-hidden max-h-0 transition-all duration-300 border-b border-neutral-300"	  x-bind:style="open ? 'max-height: ' + $el.scrollHeight + 'px':''">
+            <p class="text-md max-w-3xl pl-12 pb-8 py-4 text-gray-500 dark:text-gray-300">
+               two question answer
+            </p>
+        </div>
+    </div>
+
+
+            
+        </ul>
+    
 </div>
 
 
 
-<section class="bg-white dark:bg-gray-900">
+<section class="bg-white dark:bg-neutral-900">
     <div class="container px-6 py-10 mx-auto">
         <div class="text-center">
-            <h1 class="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">From the blog</h1>
+            <h1 class="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white bg-red-500">From the blog</h1>
 
             <p class="max-w-lg mx-auto mt-4 text-gray-500">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veritatis sint autem nesciunt, laudantium
@@ -166,7 +278,7 @@
             <div>
                 <img class="relative z-10 object-cover w-full rounded-md h-96" src="https://images.unsplash.com/photo-1644018335954-ab54c83e007f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="">
 
-                <div class="relative z-20 max-w-lg p-6 mx-auto -mt-20 bg-white rounded-md shadow dark:bg-gray-900">
+                <div class="relative z-20 max-w-lg p-6 mx-auto -mt-20 bg-white rounded-md shadow dark:bg-neutral-800">
                     <a href="#" class="font-semibold text-gray-800 hover:underline dark:text-white md:text-xl">
                         All the features you want to know
                     </a>
@@ -183,7 +295,7 @@
             <div>
                 <img class="relative z-10 object-cover w-full rounded-md h-96" src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="">
 
-                <div class="relative z-20 max-w-lg p-6 mx-auto -mt-20 bg-white rounded-md shadow dark:bg-gray-900">
+                <div class="relative z-20 max-w-lg p-6 mx-auto -mt-20 bg-white rounded-md shadow dark:bg-neutral-800">
                     <a href="#" class="font-semibold text-gray-800 hover:underline dark:text-white md:text-xl">
                         How to use sticky note for problem solving
                     </a>
@@ -199,7 +311,7 @@
         </div>
     </div>
 </section>
-<section class="bg-white dark:bg-gray-900">
+<section class="bg-white dark:bg-neutral-800">
     <div class="container px-6 py-10 mx-auto">
         <h1 class="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">From the blog</h1>
 
@@ -212,7 +324,7 @@
                         How to use sticky note for problem solving
                     </a>
                     
-                    <span class="text-sm text-gray-500 dark:text-gray-300">On: 20 October 2019</span>
+                    <span class="text-sm text-gray-500 dark:text-gray-100">On: 20 October 2019</span>
                 </div>
             </div>
 
@@ -282,7 +394,7 @@
 
 
 
-<section class="bg-white dark:bg-cyan-800">
+<section class="bg-white dark:bg-zinc-900">
     <div class="container px-4 py-16 mx-auto lg:flex lg:items-center lg:justify-between">
         <h2 class="text-2xl font-semibold tracking-tight text-gray-800 xl:text-3xl dark:text-white">
             Sign up for Jambo News, Updates and Promotions
@@ -320,19 +432,13 @@
 
 
 
-		</main>
+</main>
 
 
-
-		<!-- Current page: / -->
-
+<!-- Current page: / -->
 
 
-   		<script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
-		
-   		
-		
-		       <!-- Footer Start -->
+       <!-- Footer Start -->
 <footer class="p-4 bg-white sm:p-6 dark:bg-gray-900">
     <div class="md:flex md:justify-between">
         <div class="mb-6 md:mb-0">
@@ -415,8 +521,10 @@
 
 <a href="javascript:void(0)" onclick="topFunction()" id="back-to-top" class="back-to-top rounded-pill"><i class="mdi mdi-arrow-up"></i></a>
 
+		 
 
-		<script src="assets/js/app.js"></script>
+   		<script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+		<script src="/assets/js/app.js"></script>
 
 	</body>
 </html>

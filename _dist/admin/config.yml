@@ -1,0 +1,54 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: "src/assets/img"
+public_folder: "src/assets/"
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "src/blog"
+    create: true
+    slug: "---"
+    fields:
+      - { label: "title", name: "title", widget: "string" }
+      - { label: "date", name: "date", widget: "date", format: "YYYY-MM-DD" }
+      - {
+          label: "updated",
+          name: "updated",
+          widget: "date",
+          format: "YYYY-MM-DD",
+          required: false,
+        }
+      - { label: "intro", name: "intro", widget: "string" }
+      - {
+          label: "canonical",
+          name: "canonical",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "publication",
+          name: "publication",
+          widget: "string",
+          required: false,
+        }
+      - { label: "tags", name: "tags", widget: "list" }
+      - { label: "body", name: "body", widget: "markdown" }
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "faq"
+        label: "FAQs"
+        file: "src/_data/faq.json"
+        fields:
+          - label: "Categories"
+            name: "categoryList"
+            widget: "list"
+            fields:
+              - { label: "Category", name: "catagory", widget: "string" }
+              - label: "Questions"
+                name: "questionList"
+                widget: "list"
+                fields:
+                  - { label: "Question", name: "question", widget: "string" }
+                  - { label: "Answer", name: "answer", widget: "markdown" }

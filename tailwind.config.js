@@ -5,10 +5,16 @@ module.exports = {
     content: ['./src/**/*.{html,js,jsx,md,njk}'],
     safelist: [],
     theme: {
+      container: {
+        center: true,
+      },
       extend: {
         colors: {
          
         },
+        fontFamily: {
+
+        }
       },
     },
     plugins: [

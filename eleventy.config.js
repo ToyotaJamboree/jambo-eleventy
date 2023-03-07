@@ -29,26 +29,24 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(require("./eleventy.config.images.js"));
 
 
-	const eleventySass = require("eleventy-sass");
-	eleventyConfig.addPlugin(eleventySass,{
-		sass: {
-			style: "expanded",
-			sourceMap: true,
-			loadPaths: ["node_modules"],
-		  },
+	// const eleventySass = require("eleventy-sass");
+	// eleventyConfig.addPlugin(eleventySass,{
+	// 	sass: {
+	// 		style: "expanded",
+	// 		sourceMap: true,
+	// 		loadPaths: ["node_modules"],
+	// 	  },
 
-	});
+	// });
 
 
 	// Official plugins
 	eleventyConfig.addPlugin(pluginRss);
-	
+
 
 	eleventyConfig.addPlugin(pluginNavigation);
 	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 	eleventyConfig.addPlugin(pluginBundle);
-
-
 
 	// Filters
 	eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
