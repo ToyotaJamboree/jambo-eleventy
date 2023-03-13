@@ -6,4 +6,4 @@ eleventyNavigation:
 ---
 # About  
 
-<iconify-icon icon="mdi:home"></iconify-icon> a asdas
+<iconify-icon icon="mdi:home"></iconify-icon> a 

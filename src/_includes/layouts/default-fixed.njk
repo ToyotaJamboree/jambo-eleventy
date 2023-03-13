@@ -2,13 +2,12 @@
 layout: layouts/base.njk
 bodyClass: antialiased bg-cyan-900 dark:bg-Cyan-900 text-slate-50 tracking-tight
 ---
-
 	<a href="#skip" class="sr-only">Skip to main content </a>
 
     {% include 'partials/header.njk' %}
 
 
-    <main id="skip">
+    <main id="skip" class="container">
         {{ content | safe }}
     </main>
 
