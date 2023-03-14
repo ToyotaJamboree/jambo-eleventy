@@ -22,6 +22,36 @@
   }
 
 
+  .tj-mainnav {
+    /* @apply sm:flex */
+  }
+
+  .tj-mainnav a {
+      @apply flex items-center justify-between w-full cursor-pointer;
+  }
+
+  .tj-mainnav_subnav {
+    @apply relative sm:absolute z-10 py-6 top-11 w-auto bg-white text-gray-400 shadow-md m-auto;
+    @apply bg-white dark:bg-neutral-800;
+    @apply text-gray-800 dark:text-gray-300;
+  }
+
+  .tj-mainnav_subnav li {
+  
+  }
+
+  .tj-mainnav_subnav li a{
+    @apply flex w-auto;
+    @apply py-2 px-6;
+  }
+
+  .tj-mainnav_subnav li a:hover {
+    @apply dark:bg-neutral-700;
+  }
+
+
+ 
+
 }
 
 @layer utilities {

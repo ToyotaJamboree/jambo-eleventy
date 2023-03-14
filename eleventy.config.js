@@ -29,6 +29,8 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(require("./eleventy.config.images.js"));
 
 
+	
+
 	// const eleventySass = require("eleventy-sass");
 	// eleventyConfig.addPlugin(eleventySass,{
 	// 	sass: {

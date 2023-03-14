@@ -35,65 +35,131 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-    
-    <div>
-       --  1 --item
-    </div>
-
-
-    
-    <div>
-       --  2 --item
-    </div>
-
-
-    
-    <div>
-       --  3 --item
-    </div>
-
-
-    
-    <div>
-       --  4 --item
-    </div>
-
-
-    
-    <div>
-       --  5 --item
-    </div>
-
-
-    
-    <div>
-       --  6 --item
-    </div>
-
-
-
-
-<nav class="bg-white dark:bg-neutral-900">
-    <div class="flex flex-wrap items-center justify-between p-4 ">
-         <a href="https://flowbite.com" class="flex items-center">
+<nav class="border-b bg-white dark:bg-neutral-900">
+    <div x-data="{showMenu : false}" class="flex justify-between h-14">
+        <!-- Brand-->
+        <span href="#" class="">
+            <!-- Logo-->
+            <a href="https://flowbite.com" class="flex items-center">
     <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
     <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Toyota Jamboree</span>
 </a> 
-         
+        </span>
+        <!-- Navbar Toggle Button -->
+        <button @click="showMenu = !showMenu" class="block md:hidden text-gray-700 p-2 rounded hover:border focus:border focus:bg-gray-100 my-2 mr-5" type="button" aria-controls="navbar-main" aria-expanded="false" aria-label="Toggle navigation">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+        <!-- Nav Links-->
+        
+    <ul class="tj-mainnav md:flex" >
+        
+            
 
+    <li class="pr-4"  x-data="{subopen:false}" @mouseleave="subopen = false" >
+
+        <a @mouseover="subopen = true" class="" href="#">
+            About <svg aria-hidden="true" class="w-5 h-5 ml-1 md:w-4 md:h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+        </a>
+
+        
+            <ul class="tj-mainnav_subnav" x-show="subopen">
+                
+                    <li class="hover:bg-"><a href="#">The Event</a></li>
+                
+                    <li class="hover:bg-"><a href="#">The Park</a></li>
+                
+                    <li class="hover:bg-"><a href="#">The Area</a></li>
+                
+                    <li class="hover:bg-"><a href="#">The Trails</a></li>
+                
+            </ul>
+        
+  
+    </li>
+ 
+
+        
+            
+
+    <li class="pr-4" >
+
+        <a @mouseover="subopen = true" class="" href="#">
+            Events 
+        </a>
+
+        
+  
+    </li>
+ 
+
+        
+            
+
+    <li class="pr-4" >
+
+        <a @mouseover="subopen = true" class="" href="#">
+            FAQ 
+        </a>
+
+        
+  
+    </li>
+ 
+
+        
+            
+
+    <li class="pr-4" >
+
+        <a @mouseover="subopen = true" class="" href="#">
+            Help &amp; Support 
+        </a>
+
+        
+  
+    </li>
+ 
+
+        
+            
+
+    <li class="pr-4" >
+
+        <a @mouseover="subopen = true" class="" href="#">
+            Blog 
+        </a>
+
+        
+  
+    </li>
+ 
+
+         
+    </ul>
 
     </div>
 </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <nav class="hidden bg-white border-gray-200 px-2 md:px-4 py-2.5 dark:bg-neutral-900 bg-gray-900">
@@ -121,7 +187,7 @@
                 <li>
                     <a href="#" class="block py-2 pl-3 pr-4 text-blue-600 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-blue-500 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700" aria-current="page">About</a>
                 </li>
-                <li x-data="{subopen:false}" @mouseleave="subopen = false">
+                <li x-data="{subopen:false}" >
                     <button id="mega-menu-dropdown-button" @mouseover="subopen = true" data-dropdown-toggle="mega-menu-dropdown" class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-700 border-b border-gray-100 md:w-auto hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-gray-400 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
                         Company<svg aria-hidden="true" class="w-5 h-5 ml-1 md:w-4 md:h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                     </button>
@@ -217,7 +283,7 @@
 
 
 
-asdf
+
 
 
 

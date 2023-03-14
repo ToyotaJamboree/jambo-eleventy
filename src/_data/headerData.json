@@ -1,0 +1,52 @@
+{
+  "header" : [
+    {
+      "text" : "About",
+      "href" : "#",
+      "links": [
+        {
+          "text": "The Event",
+          "href": "#"
+        },
+        {
+          "text": "The Park",
+          "href": "#"
+        },
+        {
+          "text": "The Area",
+          "href": "#"
+        },
+        {
+          "text": "The Trails",
+          "href": "#"
+        }
+      ]
+    },
+    {
+      "text" : "Events",
+      "href" : "#"
+    },
+    {
+      "text" : "FAQ",
+      "href" : "#"
+    },
+    {
+      "text" : "Help & Support",
+      "href" : "#"
+    },
+    {
+      "text" : "Blog",
+      "href" : "#"
+    }
+  ]
+
+
+
+
+
+
+
+
+
+
+}
